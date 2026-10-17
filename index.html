@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Naveen & Deepika — Wedding Invitation</title>
+<title>Daniel &amp; Jenifer — Wedding Invitation</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -607,11 +607,11 @@ button{
             rgba(20,4,10,.05),
             rgba(30,5,15,.62)
         ),
-        url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwJy5eQ_FG-zchMwpMhi4OL64N21W6buBSSZ2ntZJqUK22RzY_oGNSqrQHWNG3-Lf8FWStc9CLpgrTYofV_d2S6I72Dx4ZHZ5bSaENQ2VGF9InS9T58zxqf58JANoz1wDXDTUi7V0OUF6fn5EOU2asRDvZdvi4P9LUM_q3zpJC0UgCW0hrgUCQyIIF5dHu/s981/wed%20img1.jpg");
+        url("./assets/cover.jpg");
 
     background-size:cover;
 
-    background-position:center;
+    background-position:center 18%;
 
     transform:
         scale(1.08)
@@ -1361,11 +1361,11 @@ button{
             transparent 45%,
             rgba(35,8,15,.55)
         ),
-        url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiwJy5eQ_FG-zchMwpMhi4OL64N21W6buBSSZ2ntZJqUK22RzY_oGNSqrQHWNG3-Lf8FWStc9CLpgrTYofV_d2S6I72Dx4ZHZ5bSaENQ2VGF9InS9T58zxqf58JANoz1wDXDTUi7V0OUF6fn5EOU2asRDvZdvi4P9LUM_q3zpJC0UgCW0hrgUCQyIIF5dHu/s981/wed%20img1.jpg");
+        url("./assets/cover.jpg");
 
     background-size:cover;
 
-    background-position:center;
+    background-position:center top;
 
     will-change:transform;
 }
@@ -2344,6 +2344,90 @@ button{
 
 }
 
+
+/* Premium opening envelope and scratch reveal */
+.gold-orbit{animation:none!important;opacity:.42}.gold-side,.gold-horizontal,.gold-corner{opacity:.62}
+.envelope-wrapper{width:min(350px,88vw);height:390px;animation:none}
+.envelope{height:auto;aspect-ratio:1.32;overflow:visible;perspective:1000px;border:1px solid rgba(142,104,41,.4);border-radius:3px;box-shadow:0 34px 90px rgba(57,29,28,.22),0 0 0 8px rgba(255,253,248,.52)}
+.envelope-letter{top:12%;height:78%;z-index:1;background:linear-gradient(150deg,#fffdf8,#f8efe1);border:1px solid #e9dcc6;transition:transform .9s ease .2s}
+.envelope-front{background:linear-gradient(135deg,#e7d4c8,#d4b8ab);border-top:1px solid #c49a52}
+.envelope-flap{position:absolute;inset:0 0 auto;height:59%;clip-path:polygon(0 0,100% 0,50% 94%);background:linear-gradient(145deg,#f1e2d7,#d9bfb2);z-index:5;transform-origin:top center;backface-visibility:hidden;transition:transform 1s cubic-bezier(.2,.75,.22,1),filter .8s}
+.envelope-seal{width:54px;height:54px;bottom:38%;border:1px solid #f3dcae;box-shadow:0 4px 18px #6a492744,inset 0 0 0 3px #b68c4d,inset 0 0 0 5px #e5c779;font-size:15px}
+#opening-screen::after{content:'';position:absolute;inset:-25%;pointer-events:none;opacity:0;background:radial-gradient(ellipse at center,#fff3c9 0,#dcb45755 20%,transparent 65%);mix-blend-mode:screen}
+#opening-screen.open::after{animation:envelopeShine 1.8s ease-out}#opening-screen.open .envelope-flap{transform:rotateX(178deg);filter:brightness(1.12)}#opening-screen.open .envelope-letter{transform:translateY(-32px)}
+@keyframes envelopeShine{20%{opacity:.9}100%{opacity:0;transform:scale(1.5)}}
+.opening-text{left:0;bottom:auto;top:278px;color:#745a42;font-family:'Cormorant Garamond',serif;font-size:21px;letter-spacing:.04em;text-transform:none}
+.opening-gold-line{left:50%;bottom:auto;top:315px;width:90px;opacity:.7}
+.envelope-open{position:absolute;top:339px;left:50%;transform:translateX(-50%);white-space:nowrap;border:1px solid #a77c3e;background:linear-gradient(135deg,#6d3d3c,#3b2026);color:#fff9ee;padding:14px 24px;font:500 9px 'Inter',sans-serif;letter-spacing:.22em;text-transform:uppercase;box-shadow:0 10px 26px #47272930;cursor:pointer;transition:transform .25s,box-shadow .25s}
+.envelope-open:hover{transform:translateX(-50%) translateY(-2px);box-shadow:0 14px 32px #4727294d}.envelope-open span{color:#e7c77e;margin-left:8px}
+.scratch-wrap{width:min(520px,100%);margin:56px auto 0;text-align:center;position:relative;z-index:2}.scratch-caption,.scratch-hint{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#826d70}
+.scratch-card{height:190px;margin:15px auto 12px;position:relative;overflow:hidden;border:1px solid #c49a52;background:#fdf9f0;box-shadow:0 18px 48px #54243016}
+.scratch-under{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 40%,#fffdf9,#f1e5d2)}
+.scratch-overline{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#986f3d}.scratch-under strong{font:500 clamp(42px,8vw,57px)/1 'Cormorant Garamond',serif;color:#542430;margin:12px 0 8px}.scratch-time{font-size:10px;letter-spacing:.21em;text-transform:uppercase;color:#826d70}
+#scratchCanvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:crosshair;transition:opacity .65s}.scratch-card.revealed #scratchCanvas{opacity:0;pointer-events:none}
+.blessing-button{min-width:245px;min-height:68px;background-image:linear-gradient(115deg,#32131dd1,#5424309c),url('./assets/pink-petals.png');background-size:cover;background-position:center 46%;border:1px solid #c79a4d;box-shadow:0 14px 32px #32131d30;letter-spacing:.2em}
+.flower{width:var(--flower-size);height:var(--flower-size);object-fit:contain;filter:drop-shadow(0 3px 5px #32131d30)}
+@media(max-width:520px){.envelope-wrapper{height:360px}.envelope-open{top:315px}.opening-text{top:257px}.opening-gold-line{top:293px}.envelope-seal{bottom:36%;width:48px;height:48px}.scratch-card{height:172px}.gold-side.left{left:8px}.gold-side.right{right:8px}}
+
+
+/* Small transparent rose petals and a groom-focused portrait crop */
+.hero-image{background-position:center 18%}
+.venue-photo{background-position:center top!important;transform:scale(1.02)!important}
+.blessing-button{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(135deg,#512632,#32131d)!important;min-width:260px;min-height:74px;padding:18px 32px;border:1px solid #d8b86c;box-shadow:0 12px 30px rgba(15,4,8,.3)}
+.blessing-button:hover{background:linear-gradient(135deg,#66313b,#3d1723)!important}
+.blessing-label{position:relative;z-index:2;display:inline-flex;align-items:center;gap:9px;color:#fff8ee}
+.blessing-label>span{color:var(--gold-light)}
+.blessing-petals{position:absolute;inset:0;z-index:1;pointer-events:none}
+.blessing-petals img{position:absolute;width:15px;height:19px;object-fit:contain;opacity:.95;filter:drop-shadow(0 2px 3px rgba(0,0,0,.3))}
+.blessing-petals .bp1{left:16px;top:12px;transform:rotate(-32deg)}
+.blessing-petals .bp2{left:38px;bottom:7px;width:13px;height:17px;transform:rotate(24deg)}
+.blessing-petals .bp3{left:74px;top:7px;width:12px;height:16px;transform:rotate(58deg)}
+.blessing-petals .bp4{right:18px;top:9px;transform:rotate(28deg)}
+.blessing-petals .bp5{right:43px;bottom:7px;width:13px;height:17px;transform:rotate(-40deg)}
+.blessing-petals .bp6{right:78px;top:8px;width:12px;height:16px;transform:rotate(-62deg)}
+.flower{width:var(--flower-size);height:calc(var(--flower-size) * 1.2);object-fit:contain;filter:drop-shadow(0 2px 3px rgba(50,19,29,.28))}
+
+
+/* Refined finishing details */
+.gold-atmosphere{opacity:.78}
+.gold-side,.gold-horizontal,.gold-corner{opacity:.36}
+#gold-particles{opacity:.28}
+.navbar{position:absolute;mix-blend-mode:normal;color:#f8eee2;background:linear-gradient(180deg,rgba(35,14,20,.38),transparent);padding:24px 5vw}
+.navbar .logo span{color:#e7c77e}.nav-message{color:#f0dfc6}
+.map-button{margin-top:38px;padding:18px 30px;border:1px solid #d6b36c;outline:1px solid rgba(214,179,108,.32);outline-offset:4px;background:linear-gradient(135deg,#6a303a,#381821);color:#fff8ed;text-transform:uppercase;font-size:9px;letter-spacing:.2em;box-shadow:0 12px 32px rgba(50,19,29,.22);}
+.map-button span{display:inline-block;color:#e7c77e;transition:transform .25s}.map-button:hover{background:linear-gradient(135deg,#793b44,#461e29);color:#fffaf3;transform:translateY(-3px);box-shadow:0 16px 38px rgba(50,19,29,.3)}.map-button:hover span{transform:translate(2px,-2px)}
+.venue-photo-wrap{border:1px solid rgba(199,154,77,.8);box-shadow:0 22px 62px rgba(46,19,22,.2);isolation:isolate}
+.venue-photo-wrap:before{content:"";position:absolute;inset:14px;z-index:4;border:1px solid rgba(231,199,126,.8);pointer-events:none;box-shadow:inset 0 0 0 5px rgba(255,249,235,.08)}
+.venue-photo{background-position:center 2%!important;transform:scale(1.02)!important}
+.scratch-card{border-radius:3px;outline:1px solid rgba(196,154,82,.56);outline-offset:5px;box-shadow:inset 0 0 0 7px rgba(255,253,248,.9),inset 0 0 0 8px rgba(196,154,82,.42),0 18px 48px rgba(84,36,48,.17)}
+.scratch-under{outline:1px solid rgba(196,154,82,.3);outline-offset:-9px}
+#scratchCanvas{border-radius:2px}
+#opening-screen{background:radial-gradient(ellipse at 50% 42%,#fffaf2 0,#f0e5d8 58%,#e4d2c3 100%)}
+.envelope-letter{opacity:0;transition:opacity .5s ease,transform .9s ease .2s}.envelope-letter span{opacity:0;transition:opacity .35s ease .35s}
+#opening-screen.open .envelope-letter{opacity:1}
+#opening-screen.open .envelope-letter span{opacity:1}
+.envelope{border-radius:8px;background:linear-gradient(145deg,#f2dfdc,#d9b9b6);box-shadow:0 38px 95px rgba(57,29,28,.24),0 0 0 8px rgba(255,253,248,.64),0 0 0 9px rgba(199,154,77,.38)}
+.envelope-flap{background:linear-gradient(145deg,#f6e8e3,#e2c8c3);border-radius:8px 8px 0 0;filter:drop-shadow(0 4px 5px rgba(99,60,56,.08))}
+.envelope-front{background:linear-gradient(145deg,#ead4d0,#d4b5b1);border-radius:0 0 8px 8px}
+.envelope-seal{background:radial-gradient(circle at 34% 27%,#fff0c6,#d7b15f 40%,#986f35 75%,#e9cb83);color:#fffaf0;border:1px solid #f5dfa5;box-shadow:0 4px 18px rgba(75,42,23,.34),inset 0 0 0 3px rgba(125,82,32,.28),inset 0 0 0 5px rgba(255,243,200,.35);letter-spacing:.03em}
+.envelope-open{border:1px solid #e6c676;outline:1px solid rgba(230,198,118,.35);outline-offset:4px;background:linear-gradient(135deg,#733a40,#3a1b24);box-shadow:0 12px 30px rgba(50,20,28,.26),inset 0 1px 0 rgba(255,255,255,.12);letter-spacing:.24em}
+.envelope-open:hover{background:linear-gradient(135deg,#85464b,#4b232c)}
+
+
+/* Portrait envelope and softly rounded controls */
+.envelope-wrapper{width:min(360px,86vw);height:590px}
+.envelope{aspect-ratio:.78;border-radius:14px;overflow:visible}
+.envelope-flap{height:59%;border-radius:14px 14px 0 0}
+.envelope-front{border-radius:0 0 14px 14px}
+.envelope-seal{top:82%;bottom:auto;left:50%;transform:translate(-50%,-50%)}
+.opening-text{top:478px}.opening-gold-line{top:510px}.envelope-open{top:536px;border-radius:999px;padding:15px 30px}
+.map-button{border-radius:999px;padding:17px 30px}
+.blessing-button{border-radius:999px}
+.scratch-card{border-radius:16px;outline-offset:6px}
+.scratch-under{border-radius:inherit}
+#scratchCanvas{border-radius:15px}
+@media(max-width:520px){.envelope-wrapper{width:min(300px,84vw);height:520px}.envelope{aspect-ratio:.78}.opening-text{top:402px}.opening-gold-line{top:434px}.envelope-open{top:458px;padding:14px 27px}.map-button{padding:16px 25px}.scratch-card{border-radius:13px}#scratchCanvas{border-radius:12px}}
+
 </style>
 
 </head>
@@ -2398,38 +2482,17 @@ button{
      OPENING SCREEN
 ===================================================== -->
 
-<div id="opening-screen">
-
+<div id="opening-screen" aria-label="Wedding invitation envelope">
     <div class="opening-glow"></div>
-
     <div class="envelope-wrapper">
-
-        <div class="envelope">
-
-            <div class="envelope-letter">
-
-                <span>N</span>
-                <span>&amp;</span>
-                <span>D</span>
-
-            </div>
-
-            <div class="envelope-front"></div>
-
-            <div class="envelope-seal">
-                N&amp;D
-            </div>
-
+        <div class="envelope" id="envelope">
+            <div class="envelope-letter"><span>D</span><span>&amp;</span><span>J</span></div>
+            <div class="envelope-front"></div><div class="envelope-flap"><div class="envelope-seal">D&amp;J</div></div>
         </div>
-
-        <div class="opening-text">
-            An invitation to celebrate
-        </div>
-
+        <div class="opening-text">A celebration of love</div>
         <div class="opening-gold-line"></div>
-
+        <button class="envelope-open" id="openInvitation" type="button">Open invitation <span>✦</span></button>
     </div>
-
 </div>
 
 
@@ -2440,7 +2503,7 @@ button{
 <nav class="navbar">
 
     <div class="logo">
-        N <span>&amp;</span> D
+        D <span>&amp;</span> J
     </div>
 
     <div class="nav-message">
@@ -2476,9 +2539,9 @@ button{
         </div>
 
         <h1 class="hero-title">
-            Naveen
+            Daniel
             <span>&amp;</span>
-            Deepika
+            Jenifer
         </h1>
 
         <p class="hero-subtitle">
@@ -2536,7 +2599,7 @@ button{
         </div>
 
         <div class="quote-author">
-            Naveen &amp; Deepika
+            Daniel &amp; Jenifer
         </div>
 
     </div>
@@ -2584,120 +2647,20 @@ button{
 
         Please join us for a morning filled with
         blessings, smiles, music and beautiful
-        memories as Naveen &amp; Deepika begin
+        memories as Daniel &amp; Jenifer begin
         their journey together.
 
     </p>
 
 
-    <div class="time-box reveal">
-
-        <div class="time-item">
-
-            <span>
-                Morning
-            </span>
-
-            <strong>
-                7:00 AM
-            </strong>
-
+    <div class="scratch-wrap reveal">
+        <div class="scratch-caption">Scratch to reveal your date</div>
+        <div class="scratch-card" id="scratchCard" aria-label="Scratch to reveal the wedding date and time">
+            <div class="scratch-under"><span class="scratch-overline">Save the date</span><strong>09 October</strong><span class="scratch-time">7:30 in the morning</span></div>
+            <canvas id="scratchCanvas" aria-label="Scratch this card to reveal the date" role="button" tabindex="0"></canvas>
         </div>
-
-
-        <div class="time-divider"></div>
-
-
-        <div class="time-item">
-
-            <span>
-                Until
-            </span>
-
-            <strong>
-                9:00 AM
-            </strong>
-
-        </div>
-
+        <p class="scratch-hint" id="scratchHint">Use your finger or mouse to gently scratch</p>
     </div>
-
-
-    <div class="countdown-label reveal">
-        Counting down to the celebration
-    </div>
-
-
-    <div class="countdown reveal">
-
-        <div class="count-number">
-
-            <strong id="days">
-                00
-            </strong>
-
-            <span>
-                Days
-            </span>
-
-        </div>
-
-
-        <div class="count-separator">
-            :
-        </div>
-
-
-        <div class="count-number">
-
-            <strong id="hours">
-                00
-            </strong>
-
-            <span>
-                Hours
-            </span>
-
-        </div>
-
-
-        <div class="count-separator">
-            :
-        </div>
-
-
-        <div class="count-number">
-
-            <strong id="minutes">
-                00
-            </strong>
-
-            <span>
-                Minutes
-            </span>
-
-        </div>
-
-
-        <div class="count-separator">
-            :
-        </div>
-
-
-        <div class="count-number">
-
-            <strong id="seconds">
-                00
-            </strong>
-
-            <span>
-                Seconds
-            </span>
-
-        </div>
-
-    </div>
-
 </section>
 
 
@@ -2754,7 +2717,7 @@ button{
 
         <a
             class="map-button reveal-right"
-            href="https://maps.app.goo.gl/wnX73M6kUahRqrbTA"
+            href="https://www.google.com/maps/place/Hotel+Shaans/@10.8178372,78.6846866,17z/data=!3m1!4b1!4m9!3m8!1s0x3baaf5a0bb9da3d1:0x26ad0a730ae37949!5m2!4m1!1i2!8m2!3d10.8178372!4d78.6846866!16s%2Fg%2F1tfblrbf?hl=en&amp;entry=ttu&amp;g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener"
         >
@@ -2817,8 +2780,15 @@ button{
             onclick="startBlessing()"
         >
 
-            Our Blessing
-            <span>✿</span>
+            <span class="blessing-label">Our Blessing <span>✿</span></span>
+            <span class="blessing-petals" aria-hidden="true">
+                <img class="bp1" src="./assets/rose-petal.png" alt="">
+                <img class="bp2" src="./assets/rose-petal.png" alt="">
+                <img class="bp3" src="./assets/rose-petal.png" alt="">
+                <img class="bp4" src="./assets/rose-petal.png" alt="">
+                <img class="bp5" src="./assets/rose-petal.png" alt="">
+                <img class="bp6" src="./assets/rose-petal.png" alt="">
+            </span>
 
         </button>
 
@@ -2880,7 +2850,7 @@ button{
 
         <a
             class="contact-item reveal-left"
-            href="https://maps.app.goo.gl/wnX73M6kUahRqrbTA"
+            href="https://www.google.com/maps/place/Hotel+Shaans/@10.8178372,78.6846866,17z/data=!3m1!4b1!4m9!3m8!1s0x3baaf5a0bb9da3d1:0x26ad0a730ae37949!5m2!4m1!1i2!8m2!3d10.8178372!4d78.6846866!16s%2Fg%2F1tfblrbf?hl=en&amp;entry=ttu&amp;g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener"
         >
@@ -2898,7 +2868,7 @@ button{
 
         <a
             class="contact-item reveal-right"
-            href="tel:99421000000"
+            href="tel:+917732484800"
         >
 
             <span>
@@ -2906,7 +2876,7 @@ button{
             </span>
 
             <strong>
-                99421000000
+                +91 7732484800
             </strong>
 
         </a>
@@ -2917,7 +2887,7 @@ button{
 
     <div class="monogram-end reveal">
 
-        N <span>&amp;</span> D
+        D <span>&amp;</span> J
 
     </div>
 
@@ -2938,138 +2908,28 @@ button{
    OPENING SCREEN
 ========================================================= */
 
-window.addEventListener("load", function(){
-
-    setTimeout(function(){
-
-        const opening =
-            document.getElementById(
-                "opening-screen"
-            );
-
-        if(opening){
-
-            opening.classList.add("hide");
-
-        }
-
-    },4200);
-
+document.getElementById("openInvitation").addEventListener("click",function(){
+    const opening=document.getElementById("opening-screen");opening.classList.add("open");
+    window.setTimeout(()=>opening.classList.add("hide"),850);
+    window.setTimeout(()=>opening.remove(),2350);
 });
 
-
-/* =========================================================
-   WEDDING DATE
-========================================================= */
-
-/*
-   CHANGE THIS DATE.
-
-   Example:
-
-   new Date("2026-11-09T07:00:00")
-*/
-
-const WEDDING_DATE =
-    new Date("2026-12-01T07:00:00");
-
-
-/* =========================================================
-   COUNTDOWN
-========================================================= */
-
-function updateCountdown(){
-
-    const now =
-        new Date();
-
-    const difference =
-        WEDDING_DATE.getTime()
-        -
-        now.getTime();
-
-
-    if(difference <= 0){
-
-        document.getElementById("days")
-            .innerText = "00";
-
-        document.getElementById("hours")
-            .innerText = "00";
-
-        document.getElementById("minutes")
-            .innerText = "00";
-
-        document.getElementById("seconds")
-            .innerText = "00";
-
-        return;
-    }
-
-
-    const days =
-        Math.floor(
-            difference /
-            (1000 * 60 * 60 * 24)
-        );
-
-
-    const hours =
-        Math.floor(
-            (difference /
-            (1000 * 60 * 60))
-            % 24
-        );
-
-
-    const minutes =
-        Math.floor(
-            (difference /
-            (1000 * 60))
-            % 60
-        );
-
-
-    const seconds =
-        Math.floor(
-            (difference / 1000)
-            % 60
-        );
-
-
-    document.getElementById("days")
-        .innerText =
-        String(days)
-        .padStart(2,"0");
-
-
-    document.getElementById("hours")
-        .innerText =
-        String(hours)
-        .padStart(2,"0");
-
-
-    document.getElementById("minutes")
-        .innerText =
-        String(minutes)
-        .padStart(2,"0");
-
-
-    document.getElementById("seconds")
-        .innerText =
-        String(seconds)
-        .padStart(2,"0");
-
+/* Scratch to reveal the wedding date */
+const scratchCard=document.getElementById("scratchCard");
+const scratchCanvas=document.getElementById("scratchCanvas");
+const scratchCtx=scratchCanvas.getContext("2d",{willReadFrequently:true});
+let scratching=false,lastScratchCheck=0;
+function prepareScratchCard(){
+ const rect=scratchCard.getBoundingClientRect(),ratio=Math.min(window.devicePixelRatio||1,2);
+ scratchCanvas.width=Math.max(1,Math.round(rect.width*ratio));scratchCanvas.height=Math.max(1,Math.round(rect.height*ratio));scratchCtx.setTransform(ratio,0,0,ratio,0,0);
+ const gold=scratchCtx.createLinearGradient(0,0,rect.width,rect.height);gold.addColorStop(0,"#a77b3f");gold.addColorStop(.48,"#ead7ae");gold.addColorStop(1,"#b28b51");scratchCtx.fillStyle=gold;scratchCtx.fillRect(0,0,rect.width,rect.height);
+ scratchCtx.globalAlpha=.16;for(let i=0;i<100;i++){scratchCtx.fillStyle=i%2?"#fff":"#755d3e";scratchCtx.beginPath();scratchCtx.arc(Math.random()*rect.width,Math.random()*rect.height,Math.random()*1.3,0,Math.PI*2);scratchCtx.fill();}
+ scratchCtx.globalAlpha=1;scratchCtx.fillStyle="#fffaf0";scratchCtx.textAlign="center";scratchCtx.font="10px Inter,sans-serif";scratchCtx.letterSpacing="3px";scratchCtx.fillText("A LITTLE SURPRISE",rect.width/2,rect.height/2-8);scratchCtx.font="26px Cormorant Garamond,Georgia,serif";scratchCtx.letterSpacing="1px";scratchCtx.fillText("Scratch to reveal",rect.width/2,rect.height/2+29);scratchCtx.globalCompositeOperation="destination-out";
 }
-
-
-updateCountdown();
-
-setInterval(
-    updateCountdown,
-    1000
-);
-
+prepareScratchCard();new ResizeObserver(()=>{if(!scratchCard.classList.contains("revealed"))prepareScratchCard();}).observe(scratchCard);
+function scratchAt(event){const rect=scratchCanvas.getBoundingClientRect();scratchCtx.beginPath();scratchCtx.arc(event.clientX-rect.left,event.clientY-rect.top,27,0,Math.PI*2);scratchCtx.fill();}
+function checkScratchProgress(){if(Date.now()-lastScratchCheck<250)return;lastScratchCheck=Date.now();const pixels=scratchCtx.getImageData(0,0,scratchCanvas.width,scratchCanvas.height).data;let cleared=0,samples=0;for(let i=3;i<pixels.length;i+=48){samples++;if(pixels[i]<40)cleared++;}if(samples&&cleared/samples>.38){scratchCard.classList.add("revealed");document.getElementById("scratchHint").textContent="Looking forward to celebrating with you ✦";}}
+scratchCanvas.addEventListener("pointerdown",event=>{scratching=true;scratchCanvas.setPointerCapture(event.pointerId);scratchAt(event);event.preventDefault();});scratchCanvas.addEventListener("pointermove",event=>{if(!scratching)return;scratchAt(event);checkScratchProgress();event.preventDefault();});scratchCanvas.addEventListener("pointerup",()=>scratching=false);scratchCanvas.addEventListener("pointercancel",()=>scratching=false);scratchCanvas.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();scratchCard.classList.add("revealed");document.getElementById("scratchHint").textContent="Looking forward to celebrating with you ✦";}});
 
 /* =========================================================
    GOLD PARTICLES
@@ -3261,130 +3121,9 @@ let blessingTimer = null;
 
 
 function startBlessing(){
-
-    const container =
-        document.getElementById(
-            "flower-container"
-        );
-
-    container.innerHTML = "";
-
-
-    const flowerSymbols = [
-
-        "✿",
-        "❀",
-        "✽",
-        "✾",
-        "🌸",
-        "❁",
-        "✧"
-
-    ];
-
-
-    const flowerColors = [
-
-        "#c98f93",
-        "#e4aeb1",
-        "#d8b98b",
-        "#e7c77e",
-        "#f5dfe0",
-        "#ffffff"
-
-    ];
-
-
-    for(
-        let i = 0;
-        i < 130;
-        i++
-    ){
-
-        const flower =
-            document.createElement(
-                "div"
-            );
-
-
-        flower.className =
-            "flower";
-
-
-        flower.innerHTML =
-            flowerSymbols[
-                Math.floor(
-                    Math.random()
-                    *
-                    flowerSymbols.length
-                )
-            ];
-
-
-        flower.style.left =
-            Math.random() * 100
-            + "%";
-
-
-        flower.style.fontSize =
-            (15 +
-            Math.random() * 25)
-            + "px";
-
-
-        flower.style.color =
-            flowerColors[
-                Math.floor(
-                    Math.random()
-                    *
-                    flowerColors.length
-                )
-            ];
-
-
-        flower.style.animationDuration =
-            (5 +
-            Math.random() * 7)
-            + "s";
-
-
-        flower.style.animationDelay =
-            Math.random() * 3
-            + "s";
-
-
-        flower.style.setProperty(
-            "--sway",
-            (
-                Math.random() * 250
-                - 125
-            ) + "px"
-        );
-
-
-        container.appendChild(
-            flower
-        );
-
-    }
-
-
-    clearTimeout(
-        blessingTimer
-    );
-
-
-    blessingTimer =
-        setTimeout(
-            function(){
-
-                container.innerHTML =
-                    "";
-
-            },
-            15000
-        );
-
+ const container=document.getElementById("flower-container");container.innerHTML="";
+ for(let i=0;i<42;i++){const petal=document.createElement("img");petal.className="flower";petal.src="./assets/rose-petal.png";petal.alt="";petal.style.left=Math.random()*100+"%";petal.style.setProperty("--flower-size",(12+Math.random()*12)+"px");petal.style.animationDuration=(6+Math.random()*6)+"s";petal.style.animationDelay=Math.random()*2+"s";petal.style.setProperty("--sway",(Math.random()*230-115)+"px");container.appendChild(petal);}
+ clearTimeout(blessingTimer);blessingTimer=setTimeout(()=>{container.innerHTML="";},15000);
 }
 
 
