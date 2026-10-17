@@ -3,310 +3,675 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daniel &amp; Jenifer — Wedding Invitation</title>
+<title>Daniel & Jenifer | Wedding Invitation</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --ivory: #f7f1e8;
+  --wine: #542430;
+  --wine-dark: #32131d;
+  --gold: #c79a4d;
+  --gold-light: #e7c77e;
+  --rose: #c88f93;
 }
 
-html {
-  scroll-behavior: auto;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
 
 body {
-  background: #f7f1e8;
-  color: #542430;
-  font-family: "Inter", sans-serif;
+  background: var(--ivory);
+  color: var(--wine);
+  font-family: Inter, sans-serif;
   overflow-x: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+button { font: inherit; }
 
-button {
-  font-family: inherit;
-}
+.serif { font-family: "Cormorant Garamond", serif; }
 
-:root {
-  --ivory: #f7f1e8;
-  --ivory-dark: #eee2d4;
-  --wine: #542430;
-  --wine-dark: #32131d;
-  --rose: #c88f93;
-  --rose-light: #e5bfc0;
-  --gold: #c79a4d;
-  --gold-light: #e7c77e;
-  --gold-dark: #8e6829;
-  --text-soft: #826d70;
-  --white: #fffdf8;
-}
-
-/* GOLD ATMOSPHERE */
-.gold-atmosphere {
+.gold-frame {
   position: fixed;
-  inset: 0;
+  inset: 16px;
+  border: 1px solid rgba(199,154,77,.55);
   pointer-events: none;
-  z-index: 50;
-  overflow: hidden;
+  z-index: 100;
 }
 
-.gold-side {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(199,154,77,.7) 15%,
-    rgba(199,154,77,.25) 50%,
-    rgba(199,154,77,.7) 85%,
-    transparent
-  );
-  z-index: 90;
-}
-
-.gold-side.left { left: 18px; }
-.gold-side.right { right: 18px; }
-
-.gold-horizontal {
-  position: fixed;
-  left: 0;
-  right: 0;
-  height: 1px;
-  z-index: 90;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(199,154,77,.65),
-    rgba(231,199,126,.9),
-    rgba(199,154,77,.65),
-    transparent
-  );
-}
-
-.gold-horizontal.top { top: 18px; }
-.gold-horizontal.bottom { bottom: 18px; }
-
-.gold-corner {
-  position: fixed;
-  width: 70px;
-  height: 70px;
-  z-index: 91;
-  opacity: .8;
-}
-
-.gold-corner::before,
-.gold-corner::after {
-  content: "";
-  position: absolute;
-  background: linear-gradient(90deg, var(--gold), transparent);
-}
-
-.gold-corner::before {
-  width: 70px;
-  height: 1px;
-}
-
-.gold-corner::after {
-  width: 1px;
-  height: 70px;
-}
-
-.gold-corner.tl { top: 18px; left: 18px; }
-.gold-corner.tr { top: 18px; right: 18px; transform: rotate(90deg); }
-.gold-corner.br { bottom: 18px; right: 18px; transform: rotate(180deg); }
-.gold-corner.bl { bottom: 18px; left: 18px; transform: rotate(270deg); }
-
-.gold-orbit {
-  position: fixed;
-  width: 320px;
-  height: 320px;
-  border: 1px solid rgba(199,154,77,.13);
-  border-radius: 50%;
-  z-index: 20;
-  pointer-events: none;
-}
-
-.gold-orbit::before {
+.gold-frame::before,
+.gold-frame::after {
   content: "✦";
   position: absolute;
-  top: -8px;
-  left: 50%;
   color: var(--gold);
-  font-size: 13px;
+  font-size: 16px;
+  background: var(--ivory);
+  padding: 3px;
 }
 
-.gold-orbit.one {
-  left: -190px;
-  top: 25%;
-  animation: orbitRotate 30s linear infinite;
-}
+.gold-frame::before { top: -12px; left: 50%; }
+.gold-frame::after { bottom: -12px; left: 50%; }
 
-.gold-orbit.two {
-  right: -210px;
-  top: 60%;
-  width: 420px;
-  height: 420px;
-  animation: orbitRotateReverse 40s linear infinite;
-}
-
-@keyframes orbitRotate {
-  to { transform: rotate(360deg); }
-}
-
-@keyframes orbitRotateReverse {
-  to { transform: rotate(-360deg); }
-}
-
-#gold-particles {
+#opening {
   position: fixed;
   inset: 0;
-  pointer-events: none;
-  z-index: 40;
-}
-
-.gold-particle {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: var(--gold-light);
-  box-shadow: 0 0 8px rgba(231,199,126,.7);
-  opacity: .45;
-}
-
-/* OPENING SCREEN */
-#opening-screen {
-  position: fixed;
-  inset: 0;
+  z-index: 1000;
+  background: radial-gradient(circle, #fffaf2, #e8d7c8);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at center, #fffaf1, #eadccd);
-  z-index: 9999;
-  transition: opacity 1.5s cubic-bezier(.22,1,.36,1), visibility 1.5s ease;
+  gap: 36px;
+  transition: opacity 1s, visibility 1s;
 }
 
-#opening-screen.hide {
+#opening.closed {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
-.opening-glow {
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(199,154,77,.17), transparent 65%);
-  animation: openingGlow 4s ease-in-out infinite;
-}
-
-@keyframes openingGlow {
-  0%, 100% { transform: scale(.85); opacity: .5; }
-  50% { transform: scale(1.15); opacity: 1; }
-}
-
-.envelope-wrapper {
-  width: 330px;
-  height: 250px;
+.envelope {
+  width: min(320px, 78vw);
+  height: 215px;
   position: relative;
-  animation: envelopeFloat 4s ease-in-out infinite;
+  background: #e3c9bc;
+  box-shadow: 0 25px 70px #54243030;
+  cursor: pointer;
+  animation: float 3s ease-in-out infinite;
+}
+
+.envelope::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #f9eee5;
+  clip-path: polygon(0 0, 50% 55%, 100% 0);
   z-index: 2;
 }
 
-.envelope {
+.envelope::after {
+  content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #eee0d8, #ddc4b9);
-  box-shadow: 0 40px 100px rgba(84,36,48,.22);
-  overflow: hidden;
+  inset: 0;
+  background: linear-gradient(135deg,#ecd7ca,#d3ad9f);
+  clip-path: polygon(0 100%, 0 45%, 50% 80%, 100% 45%, 100% 100%);
+  z-index: 3;
 }
 
 .envelope-letter {
   position: absolute;
-  width: 75%;
-  height: 70%;
-  left: 12.5%;
-  top: 15%;
-  background: #fffdf8;
+  inset: 20px 35px;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 45px;
-  color: var(--wine);
-  box-shadow: 0 15px 35px rgba(84,36,48,.12);
+  font: 42px "Cormorant Garamond", serif;
   z-index: 1;
 }
 
-.envelope-letter span:nth-child(2) {
-  color: var(--gold);
-}
+.envelope-letter span { color: var(--gold); margin: 0 8px; }
 
-.envelope-front {
+.seal {
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 63%;
-  background: linear-gradient(135deg, #e8d2ca, #d8bbb0);
-  clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%);
   z-index: 4;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%,-50%);
+  background: var(--gold);
+  color: white;
+  border-radius: 50%;
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  font: 19px "Cormorant Garamond", serif;
 }
 
-.envelope-seal {
+.open-text {
+  color: var(--wine);
+  font-size: 10px;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  animation: pulse 2s infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  50% { opacity: .45; }
+}
+
+nav {
   position: absolute;
-  left: 50%;
-  bottom: 42px;
-  transform: translateX(-50%);
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--gold-light), var(--gold-dark));
+  top: 34px;
+  width: 100%;
+  z-index: 5;
+  text-align: center;
   color: white;
+  letter-spacing: .2em;
+  font-size: 12px;
+}
+
+.hero {
+  min-height: 100svh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 18px;
-  z-index: 6;
-  box-shadow: 0 5px 20px rgba(110,70,20,.25);
+  text-align: center;
+  overflow: hidden;
+  background: var(--wine-dark);
+  color: white;
 }
 
-.opening-text {
+.hero-image {
   position: absolute;
-  bottom: -80px;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, #1d071b30, #210712b8),
+    url("https://i.pinimg.com/736x/02/6a/e9/026ae9bb35b4eaa4c3262423af627dcf.jpg")
+    center 25% / cover no-repeat;
+  animation: zoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes zoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 100px 24px 60px;
   width: 100%;
-  text-align: center;
-  color: #80696c;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .35em;
   font-size: 10px;
+  line-height: 2;
+}
+
+.hero h1 {
+  font: 500 clamp(56px, 10vw, 110px)/.95 "Cormorant Garamond", serif;
+  margin: 30px 0;
+}
+
+.hero h1 span { color: var(--gold-light); font-style: italic; }
+
+.hero-date {
+  margin-top: 34px;
+  font-size: 11px;
   letter-spacing: .3em;
   text-transform: uppercase;
 }
 
-.opening-gold-line {
-  position: absolute;
-  width: 120px;
-  height: 1px;
-  background: var(--gold);
-  left: 50%;
-  bottom: -55px;
-  transform: translateX(-50%);
-  opacity: .5;
+.scroll-cue {
+  margin-top: 65px;
+  font-size: 10px;
+  letter-spacing: .2em;
+  animation: pulse 2s infinite;
 }
 
-@keyframes envelopeFloat {
-  0%, 100
+section {
+  padding: 100px 22px;
+  text-align: center;
+}
+
+.section-label {
+  color: var(--gold-dark, #96702f);
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  font-size: 10px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font: 500 clamp(38px, 7vw, 65px)/1.05 "Cormorant Garamond", serif;
+}
+
+.gold-line {
+  height: 1px;
+  width: 80px;
+  background: var(--gold);
+  margin: 28px auto;
+}
+
+.intro {
+  max-width: 620px;
+  margin: 25px auto 0;
+  line-height: 2;
+  font-size: 13px;
+  color: #826d70;
+}
+
+.names {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 25px;
+  align-items: center;
+  max-width: 800px;
+  margin: 50px auto 0;
+}
+
+.person-name {
+  font: 500 clamp(32px, 6vw, 55px) "Cormorant Garamond", serif;
+}
+
+.ampersand { color: var(--gold); font: 40px "Cormorant Garamond", serif; }
+
+.details {
+  background: #eee2d4;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 22px;
+  max-width: 780px;
+  margin: 45px auto 0;
+}
+
+.detail-card {
+  border: 1px solid #c79a4d66;
+  padding: 38px 20px;
+  background: #fffaf4;
+}
+
+.detail-card .symbol {
+  color: var(--gold);
+  font-size: 25px;
+  margin-bottom: 18px;
+}
+
+.detail-card h3 {
+  font: 500 31px "Cormorant Garamond", serif;
+  margin-bottom: 14px;
+}
+
+.detail-card p {
+  font-size: 12px;
+  line-height: 2;
+  color: #826d70;
+}
+
+.date-section { background: var(--wine-dark); color: var(--ivory); }
+
+.scratch-card {
+  position: relative;
+  max-width: 390px;
+  height: 190px;
+  margin: 38px auto 0;
+  background: #fffaf2;
+  overflow: hidden;
+  border: 1px solid var(--gold);
+  touch-action: pan-y;
+}
+
+.date-reveal {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--wine);
+  padding: 20px;
+}
+
+.date-reveal strong {
+  display: block;
+  font: 500 42px "Cormorant Garamond", serif;
+}
+
+.date-reveal small {
+  display: block;
+  letter-spacing: .2em;
+  font-size: 10px;
+  margin-bottom: 10px;
+}
+
+#scratch {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+.scratch-hint {
+  font-size: 10px;
+  letter-spacing: .15em;
+  color: #d9c5a0;
+  margin-top: 18px;
+}
+
+.blessing {
+  background: var(--ivory);
+  position: relative;
+  overflow: hidden;
+}
+
+.flower-area {
+  position: relative;
+  min-height: 160px;
+  margin-top: 30px;
+}
+
+.flower {
+  position: absolute;
+  top: -40px;
+  width: var(--size);
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+  animation: fall var(--duration) linear forwards;
+  animation-delay: var(--delay);
+}
+
+@keyframes fall {
+  0% { transform: translateY(-20px) rotate(0); opacity: 0; }
+  10% { opacity: .85; }
+  90% { opacity: .8; }
+  100% { transform: translate(var(--drift),240px) rotate(500deg); opacity: 0; }
+}
+
+footer {
+  background: #2c1019;
+  color: var(--ivory);
+  padding: 75px 20px;
+  text-align: center;
+}
+
+footer h2 {
+  font-size: clamp(42px,8vw,70px);
+  margin: 20px 0;
+}
+
+footer p {
+  color: #d8c2bd;
+  font-size: 11px;
+  line-height: 2;
+  letter-spacing: .12em;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 600px) {
+  .hero { min-height: 680px; }
+  .hero-image { background-position: 48% center; }
+  .names { gap: 10px; }
+  .detail-grid { grid-template-columns: 1fr; }
+  section { padding: 75px 22px; }
+  .gold-frame { inset: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="gold-frame"></div>
+
+<div id="opening" role="button" tabindex="0" aria-label="Open wedding invitation">
+  <div class="envelope">
+    <div class="envelope-letter">D <span>&amp;</span> J</div>
+    <div class="seal">D J</div>
+  </div>
+  <div class="open-text">Tap to open your invitation</div>
+</div>
+
+<nav>DANIEL <span style="color:#e7c77e">&amp;</span> JENIFER</nav>
+
+<header class="hero">
+  <div class="hero-image"></div>
+  <div class="hero-content">
+    <p class="eyebrow">Together with our families</p>
+    <p class="eyebrow" style="margin-top:24px">Joyfully invite you to celebrate</p>
+    <h1>Daniel <span>&amp;</span><br>Jenifer</h1>
+    <div style="width:70px;height:1px;background:#e7c77e;margin:25px auto"></div>
+    <p class="eyebrow">A celebration of love</p>
+    <p class="hero-date">Our Wedding Day · Join Our Celebration</p>
+    <p class="scroll-cue">SCROLL TO DISCOVER ↓</p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="reveal">
+      <p class="section-label">With love and blessings</p>
+      <h2>Two hearts, one beautiful journey</h2>
+      <div class="gold-line"></div>
+      <p class="intro">
+        With the blessings of our families and the people we love,
+        we invite you to join us as we begin a beautiful new chapter
+        together. Your presence will make our celebration truly special.
+      </p>
+
+      <div class="names">
+        <div>
+          <p class="person-name">Daniel</p>
+          <p class="section-label">The Groom</p>
+        </div>
+        <div class="ampersand">&amp;</div>
+        <div>
+          <p class="person-name">Jenifer</p>
+          <p class="section-label">The Bride</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="details">
+    <div class="reveal">
+      <p class="section-label">Save the date</p>
+      <h2>A day to remember</h2>
+      <div class="gold-line"></div>
+      <p class="intro">Please join us to share in our happiness and witness the beginning of our forever.</p>
+
+      <div class="detail-grid">
+        <article class="detail-card">
+          <div class="symbol">✦</div>
+          <h3>Wedding Ceremony</h3>
+          <p>DATE: Add your wedding date</p>
+          <p>TIME: Add your ceremony time</p>
+        </article>
+
+        <article class="detail-card">
+          <div class="symbol">⌖</div>
+          <h3>Venue</h3>
+          <p>Add your wedding venue name</p>
+          <p>Add your city and address</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="date-section">
+    <div class="reveal">
+      <p class="section-label" style="color:#e7c77e">A little surprise</p>
+      <h2>Reveal our special date</h2>
+      <p class="intro" style="color:#ddc9c7">Scratch the golden surface to reveal the date.</p>
+
+      <div class="scratch-card">
+        <div class="date-reveal">
+          <div>
+            <small>THE DAY WE BEGIN FOREVER</small>
+            <strong id="wedding-date">Your Wedding Date</strong>
+            <small>WITH LOVE, DANIEL &amp; JENIFER</small>
+          </div>
+        </div>
+        <canvas id="scratch"></canvas>
+      </div>
+
+      <p class="scratch-hint">USE YOUR FINGER OR MOUSE TO SCRATCH</p>
+    </div>
+  </section>
+
+  <section class="blessing">
+    <div class="reveal">
+      <p class="section-label">Our blessing</p>
+      <h2>Love is in the air</h2>
+      <div class="gold-line"></div>
+      <p class="intro">
+        May our journey be filled with laughter, kindness, endless love,
+        and countless beautiful memories.
+      </p>
+      <button id="bless-button" style="margin-top:28px;padding:14px 25px;border:1px solid #c79a4d;background:transparent;color:#542430;letter-spacing:.15em;font-size:10px;cursor:pointer">
+        SEND YOUR BLESSINGS ✦
+      </button>
+      <div class="flower-area" id="flower-area"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>WITH LOVE AND GRATITUDE</p>
+  <h2 class="serif">Daniel <span style="color:#e7c77e">&amp;</span> Jenifer</h2>
+  <div class="gold-line"></div>
+  <p>WE CAN'T WAIT TO CELEBRATE WITH YOU</p>
+  <p style="margin-top:35px">MADE WITH LOVE · OUR WEDDING DAY</p>
+</footer>
+
+<script>
+/* OPEN THE ENVELOPE */
+const opening = document.getElementById("opening");
+
+function openInvitation() {
+  opening.classList.add("closed");
+}
+
+opening.addEventListener("click", openInvitation);
+
+opening.addEventListener("keydown", event => {
+  if (event.key === "Enter" || event.key === " ") {
+    event.preventDefault();
+    openInvitation();
+  }
+});
+
+/* SCROLL REVEALS */
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+  revealObserver.observe(element);
+});
+
+/* SCRATCH-TO-REVEAL DATE */
+const canvas = document.getElementById("scratch");
+const ctx = canvas.getContext("2d");
+let scratching = false;
+let scratched = false;
+
+function setupScratch() {
+  const rect = canvas.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+
+  canvas.width = Math.round(rect.width * dpr);
+  canvas.height = Math.round(rect.height * dpr);
+
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  const gradient = ctx.createLinearGradient(0, 0, rect.width, rect.height);
+  gradient.addColorStop(0, "#b48740");
+  gradient.addColorStop(0.5, "#f1d99c");
+  gradient.addColorStop(1, "#b48740");
+
+  ctx.globalCompositeOperation = "source-over";
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, rect.width, rect.height);
+
+  ctx.fillStyle = "#65451d";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.font = "11px Inter, sans-serif";
+  ctx.fillText("SCRATCH HERE ✦", rect.width / 2, rect.height / 2);
+
+  scratched = false;
+}
+
+function scratchAt(event) {
+  if (!scratching || scratched) return;
+
+  const rect = canvas.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+
+  ctx.globalCompositeOperation = "destination-out";
+  ctx.beginPath();
+  ctx.arc(x, y, 23, 0, Math.PI * 2);
+  ctx.fill();
+
+  const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+  let transparent = 0;
+
+  for (let i = 3; i < pixels.length; i += 16) {
+    if (pixels[i] === 0) transparent++;
+  }
+
+  if (transparent / (pixels.length / 16) > 0.38) {
+    canvas.style.transition = "opacity .5s";
+    canvas.style.opacity = "0";
+    scratched = true;
+
+    setTimeout(() => {
+      canvas.style.display = "none";
+    }, 550);
+  }
+}
+
+canvas.addEventListener("pointerdown", event => {
+  scratching = true;
+  canvas.setPointerCapture(event.pointerId);
+  scratchAt(event);
+});
+
+canvas.addEventListener("pointermove", scratchAt);
+
+canvas.addEventListener("pointerup", () => {
+  scratching = false;
+});
+
+canvas.addEventListener("pointercancel", () => {
+  scratching = false;
+});
+
+setupScratch();
+
+/* ROSE PETALS */
+const flowerArea = document.getElementById("flower-area");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function makePetal() {
+  const petal = document.createElement("span");
+  petal.className = "flower";
+  petal.textContent = Math.random() > 0.5 ? "✿" : "❀";
